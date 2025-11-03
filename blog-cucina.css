@@ -1,0 +1,288 @@
+body{
+    margin:0px;
+    background: beige;
+}
+
+/* Barra di navigazione */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    height:8vh;
+}
+#recipe{
+    display: none;
+}
+.recipelabel{
+    font-size:20px;
+    border: 1px solid grey;
+    background: beige;
+    padding:5px;
+    width:35%;
+    text-align: center;
+    border-radius:20px;
+    transition:1s;
+}
+#recipe:checked ~.recipe-list{
+    left:14%;
+    top:6%;
+}
+.recipe-list{
+    display:none;  /*Disattivata la tendina*/
+    position:fixed;
+    padding:30px;
+    border: 1px solid black;
+    top:60px;
+    transition:1s;
+    background: beige;
+    left:14%;
+    z-index:999;
+    width:7%;
+}
+
+/* Molto importante: per far muovere la freccetta bisogna usare questa proprietà sotto!!! */
+#icon {
+    transition: transform 0.3s;
+}
+
+#recipe:checked ~ .recipelabel #icon {
+    transform: rotate(90deg);
+}
+.checklabel {
+    color:black;
+    font-size:24px;
+    top:20px;
+    left:20px;
+    /* transition: 1s; */
+}
+/* Per togliere il quadratino del check usare display:none */
+#check{
+    display: none;
+}
+/* Per collegare il check alla lista che si vuole far vedere usare ~ che crea collegamento */
+#check:checked ~.side-list{
+    left:0%;
+    top:5%;
+}
+
+.side-list{
+    position:fixed;
+    top:60px;
+    height: 100vh;
+    background: rgba(248, 244, 202, 0.9);
+    width: 20%;
+    min-width: 250px;
+    /* Min width si imposta per altri dispositivi per rendere tutto visibile */
+    left:-100%;
+    z-index: 999;
+    border-right:2px solid beige;
+    /* padding-left:20px; */
+    padding-top:30px;
+    transition:1s;
+}
+.logo{
+    /* Attenzione mettendo a href dentro l'immagine prende dello spazio (sul a href bisogna dare una classe) quindi dovrò dopo dare le misure giuste 
+    per allineare gli elementi, quindi dare background color e regolare dopo con la width, ricordati esempio img
+    apple and google store */
+    width: 120%; 
+    margin-top: -25px;
+    /* background: red; */
+}
+.link-logo{
+    /* background: blue; */
+    width:95px;
+    height:50px;
+}
+.right-side{
+    display: flex;
+    align-items: center;
+    gap:50px;
+    margin-left: 50px;   
+}
+.find-bar{
+    display: flex;
+    align-items: center;
+    width:40%;
+}
+#cerca{
+    width:600px;
+    height:30px;
+    border-radius:20px;
+    border:1px solid #d3d3d3;
+}
+.login{
+    margin-right:50px;
+    width:100px;
+    height: 40px;
+    text-align:center;
+    border-radius:20px;
+    background: orange;
+    border:1px solid orange;
+    font-size:18px;
+    margin-top:15px;
+}
+
+
+/* Header con titolo principale e background Marche */
+h1{
+    color:black;
+    font-size: 70px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+header{
+    height:50vh;
+    background: linear-gradient(to bottom, rgba(229, 237, 225, 0.5), rgb(243, 238, 195)), url("./imgcucina/marian-luzi-NI0bY-VvMi8-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    /* opacity: 0.7; */
+}
+.web-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    line-height: 40px;
+}
+.intro{
+    width: 70%;
+    font-size: 30px;
+}
+
+/* Prima sezione con 3 ricette delle Marche */
+.first-section{
+    height: 70vh;
+}
+.all-card{
+    display: flex;
+    justify-content: center;
+    gap:30px;
+}
+
+.first-card, .second-card, .third-card{
+    border:1px solid black;
+    height:500px;
+    width:20%;
+    padding:5px;
+    text-align: center;
+    background: white;
+    /* Per spostare le card che si sovvrapongono all'header si usa il margin-top:-60px in questo caso*/
+    margin-top:-60px;    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+.olive{
+    width: 100%;
+}
+.stoccafisso{
+    width:100%;
+    height: 250px;
+}
+.vincisgrassi{
+    width:100%;
+    height: 250px;
+}
+.button-card{
+    background: white;
+    border:1px solid bisque;
+    padding:10px 90px;
+    box-shadow: 0px 0px 10px 0 #d3d3d3;
+    text-decoration: none;
+    color:black;
+    font-size:20px;
+}
+.info-3-card{
+    font-size:30px;
+}
+
+
+/* Seconda sezione con background e ristoranti da visitare */
+.second-section{
+    height:50vh;
+    background: linear-gradient(rgba(245, 245, 220, 0.3)), url("./imgcucina/edward-howell-vvUy1hWVYEA-unsplash\ \(1\).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.info-restaurant{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap:30px;
+}
+.title-restaurant{
+    margin-top:50px;
+    width:60%;
+    font-size:40px;
+    color: black;
+
+}
+.restaurant{
+    width:120px;
+    border:1px solid bisque;
+    height:50px;
+    border-radius: 20px;
+    font-size:20px;
+}
+
+
+/* Terza sezione altre ricette */
+.title-third-section{
+    display: flex;
+    justify-content: center;
+    margin-top:20px;
+}
+.third-section-all-img{
+    height:50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:80px;
+}
+.brodetto-pesce, .calcioni, .coniglio, .bostrengo{
+    width:180px;
+    height:180px;
+    /* margin-top:20px; */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.link-4-recipe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color:black;
+}
+.titleimg{
+    margin-top:20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+}
+.title-3{
+    text-align: center;
+    font-size: 30px;
+    width:50%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/* Fine della pagina */
+footer{
+    border:1px solid black;
+    height:15vh;
+    display: flex;
+    align-items:center;
+    justify-content: space-evenly;
+}
+.end-info{
+    text-align: center;
+    list-style-type: none;
+}
+.end-link{
+    list-style-type: none;
+}
+.adress-info{
+    text-align: center;
+}
+.end-anchor{
+    text-decoration: none;
+    color:black;
+}
